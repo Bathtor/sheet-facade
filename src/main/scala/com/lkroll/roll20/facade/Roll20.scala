@@ -23,7 +23,7 @@
  * 
  */
 
-package com.larskroll.roll20.facade
+package com.lkroll.roll20.facade
 
 import scalajs.js
 import scalajs.js.annotation._
