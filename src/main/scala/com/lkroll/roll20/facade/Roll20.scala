@@ -20,7 +20,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  */
 
 package com.lkroll.roll20.facade
@@ -35,22 +35,26 @@ object Roll20 extends js.Object {
 
   @js.native
   trait EventInfo extends js.Object {
+
     /**
-     * The original attribute that triggered the event.
-     * It is the full name (including RowID if in a repeating section) of the attribute that originally triggered this event.
-     *
-     * Note: The entire string will have been translated into lowercase and thus might not be suitable for being fed directly into getAttrs().
-     */
+      * The original attribute that triggered the event.
+      * It is the full name (including RowID if in a repeating section) of the attribute that originally triggered this event.
+      *
+      * Note: The entire string will have been translated into lowercase and thus might not be suitable for being fed directly into getAttrs().
+      */
     val sourceAttribute: String = js.native;
+
     /**
-     * The agent that triggered the event, either player or sheetworker
-     */
+      * The agent that triggered the event, either player or sheetworker
+      */
     val sourceType: String = js.native;
   }
 
   def on(event: String, callback: js.Function1[EventInfo, Unit]): Unit = js.native;
-  def getAttrs(attributeNameArray: js.Array[String], callback: js.Function1[js.Dictionary[Any], Unit]): Unit = js.native;
-  def setAttrs(values: js.Dictionary[js.Any], options: js.Object = null, callback: js.Function0[Unit] = null): Unit = js.native;
+  def getAttrs(attributeNameArray: js.Array[String], callback: js.Function1[js.Dictionary[Any], Unit]): Unit =
+    js.native;
+  def setAttrs(values: js.Dictionary[js.Any], options: js.Object = null, callback: js.Function0[Unit] = null): Unit =
+    js.native;
   def getSectionIDs(section_name: String, callback: js.Function1[js.Array[String], Unit]): Unit = js.native;
   def generateRowID(): String = js.native;
   def removeRepeatingRow(RowID: String): Unit = js.native;
