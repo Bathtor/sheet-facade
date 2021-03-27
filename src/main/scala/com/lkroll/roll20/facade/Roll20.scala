@@ -36,16 +36,14 @@ object Roll20 extends js.Object {
   @js.native
   trait EventInfo extends js.Object {
 
-    /**
-      * The original attribute that triggered the event.
+    /** The original attribute that triggered the event.
       * It is the full name (including RowID if in a repeating section) of the attribute that originally triggered this event.
       *
       * Note: The entire string will have been translated into lowercase and thus might not be suitable for being fed directly into getAttrs().
       */
     val sourceAttribute: String = js.native;
 
-    /**
-      * The agent that triggered the event, either player or sheetworker
+    /** The agent that triggered the event, either player or sheetworker
       */
     val sourceType: String = js.native;
   }
